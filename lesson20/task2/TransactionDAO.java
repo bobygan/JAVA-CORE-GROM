@@ -1,8 +1,8 @@
 package lesson20.task2;
 
-import lesson20.task2.exсeption.BadRequestException;
-import lesson20.task2.exсeption.InternalServerException;
-import lesson20.task2.exсeption.LimitExceeded;
+import lesson20.task2.exсeptions.BadRequestException;
+import lesson20.task2.exсeptions.InternalServerException;
+import lesson20.task2.exсeptions.LimitExceeded;
 
 import java.util.Calendar;
 import java.util.Date;
