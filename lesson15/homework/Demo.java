@@ -17,11 +17,11 @@ public class Demo {
         UserRepository userRepositories=new UserRepository(users);
 
        // UserRepository[] userRepository = new UserRepository[]{user1,user2};
-    //    System.out.println(Arrays.deepToString(userRepository.getUsers()));
+    //    Sys.out.println(Arrays.deepToString(userRepository.getUsers()));
 
    //     User user=null;
       //  userRepository.save(user);
-      //  System.out.println(Arrays.deepToString(userRepositories.getUsers()));
+      //  Sys.out.println(Arrays.deepToString(userRepositories.getUsers()));
 
         userRepositories.delete(1);
         System.out.println(Arrays.deepToString(userRepositories.getUsers()));
@@ -33,24 +33,24 @@ public class Demo {
         System.out.println(Arrays.deepToString(userRepositories.getUsers()));
 
      //   userRepository.save(user);
-      //  System.out.println(Arrays.deepToString(userRepository.getUsers()));
+      //  Sys.out.println(Arrays.deepToString(userRepository.getUsers()));
        // int n = 15;
        // while (n > 0) {
         //    User user1 = new User(n, "DF", "DF");
             //  userRepository.save(user1);
-          //  System.out.println( userRepository.save(user1));
+          //  Sys.out.println( userRepository.save(user1));
          //   n--;
         //}
 //ekhnglijnr
 
-      //  System.out.println(Arrays.deepToString(userRepository.getUsers()));
+      //  Sys.out.println(Arrays.deepToString(userRepository.getUsers()));
         //  userRepository.save(null);
-      //  System.out.println(Arrays.deepToString(userRepository.getUsers()));
+      //  Sys.out.println(Arrays.deepToString(userRepository.getUsers()));
         //Сохронение юзера
         //Сохранение тогоже юзера
         //Нет места в массиве
         //Когда Null
-        //  System.out.println(user.toString());
+        //  Sys.out.println(user.toString());
 
 
     }

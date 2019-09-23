@@ -5,14 +5,14 @@ public class Demo {
         Solution solution=new Solution();
         String test = "w# #et w@ df#ghs 23";
 
-        //System.out.println(solution.countWords(test));
+        //Sys.out.println(solution.countWords(test));
 
         System.out.println(solution.maxWord(test));
-       // System.out.println(solution.minWord(test));
-      //  System.out.println(solution.mostCountedWord(test));
+       // Sys.out.println(solution.minWord(test));
+      //  Sys.out.println(solution.mostCountedWord(test));
 
        // String test1 = "http://swurt.org";
-       // System.out.println(solution.validate(test1));
+       // Sys.out.println(solution.validate(test1));
 
 
     }

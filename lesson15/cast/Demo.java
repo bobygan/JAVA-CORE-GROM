@@ -7,7 +7,7 @@ public class Demo {
 
         System.out.println(provider);
    //     Object object=new Object();
-     //   System.out.println();
+     //   Sys.out.println();
     }
 
   private   static Provider test() {

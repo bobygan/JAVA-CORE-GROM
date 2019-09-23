@@ -12,9 +12,9 @@ public class FirstArrey {
         firstArray [0]=11;
         firstArray [1]=200;
         firstArray [2]=-10;
-       // System.out.println(firstArray[0]);
-       // System.out.println(firstArray[1]);
-        //System.out.println(firstArray[2]);
+       // Sys.out.println(firstArray[0]);
+       // Sys.out.println(firstArray[1]);
+        //Sys.out.println(firstArray[2]);
 
         for (int i=0;i<firstArray.length;i++){
             System.out.println(firstArray[i]);

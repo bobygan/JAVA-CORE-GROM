@@ -31,7 +31,7 @@ public class Demo {
         //Сохранение тогоже юзера
         //Нет места в массиве
         //Когда Null
-      //  System.out.println(user.toString());
+      //  Sys.out.println(user.toString());
 
 
     }

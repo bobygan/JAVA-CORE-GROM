@@ -25,7 +25,7 @@ public class Demo {
         API[] apis = new API[]{api1, api2, api3};
 
         Controller controller=new Controller(apis);
-      //  System.out.println(Arrays.toString((controller.requestRooms(234, 3, "Odessa", "er"))));
+      //  Sys.out.println(Arrays.toString((controller.requestRooms(234, 3, "Odessa", "er"))));
 
 
         BookingComAPI bookingComAPI=new BookingComAPI(rooms);
