@@ -3,8 +3,8 @@ package lesson22.homework2;
 import java.util.Arrays;
 import java.util.Date;
 
-import static lesson22.homework2.TransactionType.INCOME;
-import static lesson22.homework2.TransactionType.OUTCOME;
+import static lesson25.homework2.TransactionType.INCOME;
+import static lesson25.homework2.TransactionType.OUTCOME;
 
 
 public class Demo {

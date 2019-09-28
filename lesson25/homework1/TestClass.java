@@ -1,4 +1,4 @@
-package lesson25;
+package lesson25.homework1;
 
 public class TestClass <T,K,V> {
 

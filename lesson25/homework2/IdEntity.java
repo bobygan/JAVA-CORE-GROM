@@ -1,4 +1,4 @@
-package lesson25;
+package lesson25.homework2;
 
 public abstract class  IdEntity {
 

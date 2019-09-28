@@ -1,6 +1,8 @@
 package lesson22.homework2;
 
 
+import lesson25.homework2.TransactionType;
+
 import java.util.Date;
 
 public class Transaction {

@@ -1,6 +1,6 @@
-package lesson25;
+package lesson25.homework2;
 
-public class Order extends IdEntity {
+public  class  Order extends IdEntity {
     private long id;
 
     public Order(long id) {

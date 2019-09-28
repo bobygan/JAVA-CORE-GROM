@@ -1,4 +1,10 @@
-package lesson25;
+package lesson25.homework1;
+
+import java.util.Arrays;
+import java.util.Date;
+
+import static lesson25.homework2.TransactionType.INCOME;
+import static lesson25.homework2.TransactionType.OUTCOME;
 
 public class Demo {
     public static void main(String[] args) throws Exception {
@@ -14,5 +20,6 @@ public class Demo {
         Long variable2 = new Long(222);
         generalDAO.validate(variable2);
         generalDAO.validate(test);
+
     }
 }

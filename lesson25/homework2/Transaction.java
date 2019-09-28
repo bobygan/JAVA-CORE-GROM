@@ -1,11 +1,9 @@
-package lesson25;
+package lesson25.homework2;
 
-
-import lesson22.homework2.TransactionType;
 
 import java.util.Date;
 
-public class Transaction {
+public class Transaction extends  IdEntity{
     private long id;
     private String city;
     private int amount;

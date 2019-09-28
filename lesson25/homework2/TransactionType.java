@@ -1,4 +1,4 @@
-package lesson22.homework2;
+package lesson25.homework2;
 
 public enum TransactionType {
     INCOME,
