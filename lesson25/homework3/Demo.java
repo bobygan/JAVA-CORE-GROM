@@ -7,9 +7,9 @@ public class Demo {
 
 
         GeneralDAO<Order> OrderDAO = new GeneralDAO<>();
-        GeneralDAO<String> StrimgDAO = new GeneralDAO<>();
-        GeneralDAO<Tool> ToolDAO = new GeneralDAO<>();
-        GeneralDAO<TestClass> TestDAO = new GeneralDAO<>();
+       // GeneralDAO<String> StrimgDAO = new GeneralDAO<>();
+     //   GeneralDAO<Tool> ToolDAO = new GeneralDAO<>();
+    //    GeneralDAO<TestClass> TestDAO = new GeneralDAO<>();
 
 
         OrderDAO.save(new Order(34));

@@ -1,6 +1,6 @@
 package lesson25.homework3;
 
-public  class GeneralDAO  <T> {
+public  class GeneralDAO  <T>   {
 
     private  T[] array = (T[]) new Object[10];
 
