@@ -5,9 +5,12 @@ package lesson25.homework2;
 //import lesson25.InternalServerException;
 
 
-public  class GeneralDAO  <T extends IdEntity> {
+import lesson25.homework2.IdEntity;
+
+public  class GeneralDAO  <T extends IdEntity>  {
 @SuppressWarnings("unchecked")
-    private T[] array = (T [] ) new  Object[10] ;
+    private T[] array = (T[]) (new  Object[10]) ;
+
 
     public T[] getAll() {
         int count = 0;
@@ -45,7 +48,7 @@ public  class GeneralDAO  <T extends IdEntity> {
 
 
   //  private boolean  validate(T t) throws BadRequestException, InternalServerException {
-  private boolean  validate(T t) throws Exception {
+  private  boolean  validate(T t) throws Exception {
 
         if (t == null) {
           //  throw new BadRequestException("Cant save null");
@@ -64,7 +67,7 @@ public  class GeneralDAO  <T extends IdEntity> {
     }
 
 
-      private  boolean CheckId(T t ) {
+      private   boolean CheckId(T t ) {
         int i = 0;
       for (i=0; i< array.length;i++ ) {
         if (array[i].getId()==t.getId()) {

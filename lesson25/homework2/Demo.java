@@ -23,19 +23,12 @@ public class Demo {
         // System.out.println(Arrays.deepToString(TransactionDAO.getAll()));
 
         GeneralDAO<Order> OrderDAO = new GeneralDAO<>();
+        OrderDAO.save(new Order(34));
+        OrderDAO.getAll();
 
-
-        GeneralDAO<Transaction > StringDAO = new GeneralDAO<>();
+        GeneralDAO<Transaction > StringDAO = new GeneralDAO<>(  );
     }
 
-    public class Orders {
-        private long id;
 
-        public Orders(long id) {
-            this.id = id;
-        }
-
-
-    }
 }
 

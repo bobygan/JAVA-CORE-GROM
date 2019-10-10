@@ -4,6 +4,7 @@ public  class GeneralDAO  <T>   {
 
     private  T[] array = (T[]) new Object[10];
 
+
     public T[] getAll() {
         return array;
     }
