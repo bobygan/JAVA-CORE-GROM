@@ -91,6 +91,7 @@ public class UkrainianBankSystem implements BankSystem {
         Random random = new Random();
         Transaction tr = new Transaction(random.nextInt(), dateCreated, null, type, amount, description);
         transaction.add(tr);
+
         return tr;
     }
 

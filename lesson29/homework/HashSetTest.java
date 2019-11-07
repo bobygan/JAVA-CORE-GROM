@@ -20,6 +20,7 @@ public class HashSetTest {
         Order order5 = new Order(88, 23, "euro", "as", "pl");
 
         Set<Order> set = new HashSet<>();
+        System.out.println(set);
         set.add(order1);
         set.add(order1);
         System.out.println(set);

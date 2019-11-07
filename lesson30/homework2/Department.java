@@ -1,9 +1,16 @@
 package lesson30.homework2;
 
-public class Department {
+import java.util.Set;
+import java.util.TreeSet;
 
-   //private DepartmentType type;
-   //private Collection employees;
+public class Department {
+   private DepartmentType type;
+   private Set<Employee> employees;//=new TreeSet<>();
+
+    public Department(DepartmentType type, Set<Employee> employees) {
+        this.type = type;
+        this.employees = employees;
+    }
 
 
 }

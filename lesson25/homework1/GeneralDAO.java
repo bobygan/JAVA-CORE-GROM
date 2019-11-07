@@ -1,7 +1,7 @@
 package lesson25.homework1;
 
 
-public class GeneralDAO<T> {
+public class GeneralDAO<T,K> {
 
     private void print(Order order) {
         System.out.println("order is= " + order.toString());
