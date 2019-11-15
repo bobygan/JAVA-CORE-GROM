@@ -6,22 +6,22 @@ import java.util.Date;
 import java.util.Set;
 import java.util.TreeSet;
 
-public class Employee {
+public class Employee implements Comparable<Employee> {
   private   String firstName;
    private String lastName;
    private Date dateHired;
    private Position position;// - enam (TEAM_LEAD, DEVELOPER, FINANCE, ANALYST, MANAGER, DESIGNER, LEAD_DESIGNER и тд.)
    private Department department;
-   private Set <Project> projectArrayList;
+   private TreeSet <Project> projectSet;
 
 
-    public Employee(String firstName, String lastName, Date dateHired, Position position, Department department, Set<Project> projectArrayList) {
+    public Employee(String firstName, String lastName, Date dateHired, Position position, Department department, TreeSet<Project> projectSet) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateHired = dateHired;
         this.position = position;
         this.department = department;
-        this.projectArrayList = projectArrayList;
+        this.projectSet = projectSet;
     }
 
     public String getFirstName() {
@@ -44,7 +44,7 @@ public class Employee {
         return department;
     }
 
-    public Set<Project> getProjectArrayList() { return projectArrayList; }
+    public Set<Project> getProjectSet() { return projectSet; }
 
     @Override
     public boolean equals(Object o) {
@@ -76,8 +76,13 @@ public class Employee {
                 ", lastName='" + lastName + '\'' +
                 ", dateHired=" + dateHired +
                 ", position=" + position +
-                ", department=" + department +
-                ", projectArrayList=" + projectArrayList +
-                '}';
+               // ", department=" + department +
+                ", projectSet=" + projectSet +
+                '}'+ '\n';
+    }
+
+
+    public int compareTo(Employee o) {
+        return 1;
     }
 }

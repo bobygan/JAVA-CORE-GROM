@@ -12,5 +12,19 @@ public class Department {
         this.employees = employees;
     }
 
+    public DepartmentType getType() {
+        return type;
+    }
 
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "type=" + type +
+              //  ", employees=" + employees +
+                '}';
+    }
 }

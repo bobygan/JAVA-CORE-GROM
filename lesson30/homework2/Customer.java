@@ -1,6 +1,6 @@
 package lesson30.homework2;
 
-public class Customer {
+public class Customer implements Comparable<Customer>{
     private String name;
     private String country;
     private int monthlyPay;
@@ -30,5 +30,32 @@ public class Customer {
                 ", country='" + country + '\'' +
                 ", monthlyPay=" + monthlyPay +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Customer)) return false;
+
+        Customer customer = (Customer) o;
+
+        if (monthlyPay != customer.monthlyPay) return false;
+        if (name != null ? !name.equals(customer.name) : customer.name != null) return false;
+        return country != null ? country.equals(customer.country) : customer.country == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (country != null ? country.hashCode() : 0);
+        result = 31 * result + monthlyPay;
+        return result;
+    }
+
+
+    @Override
+    public int compareTo(Customer o) {
+        return 1;
     }
 }

@@ -3,10 +3,11 @@ package lesson30.homework2;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class EmployeeDAO {
 
-    private static Set<Employee> employeeTreeSet = new HashSet<>();
+    private static TreeSet<Employee> employeeTreeSet = new TreeSet<>();
 
     public static Employee add(Employee employee) {
         employeeTreeSet.add(employee);
@@ -18,9 +19,11 @@ public class EmployeeDAO {
         return employee;
     }
 
-    public static Set<Employee> getAll() {
+    public static TreeSet<Employee> getAll() {
         return employeeTreeSet;
     }
+
+
 }
 
 
