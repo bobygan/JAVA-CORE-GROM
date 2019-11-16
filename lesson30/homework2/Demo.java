@@ -29,8 +29,7 @@ public class Demo {
         ProjectDAO project_DAO3 = new ProjectDAO();
         ProjectDAO project_DAO4 = new ProjectDAO();
 
-
-        //  project_DAO1.add(project1);
+        project_DAO1.add(project1);
         project_DAO2.add(project2);
         project_DAO3.add(project3);
         project_DAO4.add(project4);
@@ -59,9 +58,10 @@ public class Demo {
         //   EmployeeDAO.add(employee0);
 
 
-        System.out.println(EmployeeDAO.getAll());
+      //  System.out.println(EmployeeDAO.getAll());
 
         System.out.println(Controller.employeesByProject("H1"));
+
         System.out.println(Controller.projectsByEmployee(employee_1));
 
         System.out.println(Controller.employeesByDepartmentWithoutProject(DepartmentType.DESIGNER));
@@ -72,9 +72,9 @@ public class Demo {
 
          System.out.println(Controller.teamLeadsByEmployee(employee_1));
 
-        //System.out.println(Controller.employeesByProjectEmployee(employee_1));
+        System.out.println(Controller.employeesByProjectEmployee(employee_2));
 
-         //System.out.println(Controller.projectsByCustomer(customer1));
+         System.out.println(Controller.projectsByCustomer(customer2));
 
          System.out.println(Controller.employeesByCustomerProjects(customer2));
     }

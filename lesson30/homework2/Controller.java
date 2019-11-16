@@ -105,59 +105,60 @@ public class Controller {
     }
 
 
-    public static TreeSet<Employee> employeesByProjectEmployee(Employee employee) {
+    public static TreeSet<Employee> employeesByProjectEmployee(Employee employe) {
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Employee> Temp = new TreeSet<>();
         while (employeeIterator.hasNext()) {
             Employee employeeTemp = employeeIterator.next();
             Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
-            Iterator<Project> projectIterator1 = employee.getProjectSet().iterator();
+
+            Iterator<Project> projectIterator1 = employe.getProjectSet().iterator();
             while (projectIterator.hasNext()) {
-                System.out.println("итератор");
+                Project projectTemp = projectIterator.next();
                 while (projectIterator1.hasNext()) {
-                    if (projectIterator.next().getName().equals(projectIterator1.next().getName())) {
+                    if (projectTemp.equals(projectIterator1.next())) {
                         Temp.add(employeeTemp);
                     }
                 }
             }
         }
-        return Temp;
-    }
-
-
-    public static TreeSet<Project> projectsByCustomer(Customer customer) {
-        Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
-        TreeSet<Project> Temp = new TreeSet<>();
-        while (employeeIterator.hasNext()) {
-            Employee employeeTemp = employeeIterator.next();
-            Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
-
-            while (projectIterator.hasNext()) ;
-            Project projectTemp=projectIterator.next();
-                if (projectTemp.getCustomer().equals(customer)) {
-                    Temp.add(projectTemp);
-                }
-            }
-        return Temp;
-    }
-
-    public static TreeSet<Employee> employeesByCustomerProjects(Customer customer) {
-        Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
-        TreeSet<Employee> Temp = new TreeSet<>();
-        while (employeeIterator.hasNext()) {
-            Employee employeeTemp = employeeIterator.next();
-            Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
-
-            while (projectIterator.hasNext()) {
-
-                if (projectIterator.next().getCustomer().equals(customer)) {
-                    Temp.add(employeeTemp);
-                }
-            }
+            return Temp;
         }
-        return Temp;
+
+
+        public static TreeSet<Project> projectsByCustomer (Customer customer){
+            Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
+            TreeSet<Project> Temp = new TreeSet<>();
+            while (employeeIterator.hasNext()) {
+                Employee employeeTemp = employeeIterator.next();
+                Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
+                while (projectIterator.hasNext()) {
+                Project projectTemp = projectIterator.next();
+                if (projectTemp.getCustomer().equals(customer)) {
+                        Temp.add(projectTemp);
+                }
+                }
+            }
+            return Temp;
+        }
+
+        public static TreeSet<Employee> employeesByCustomerProjects (Customer customer){
+            Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
+            TreeSet<Employee> Temp = new TreeSet<>();
+            while (employeeIterator.hasNext()) {
+                Employee employeeTemp = employeeIterator.next();
+                Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
+
+                while (projectIterator.hasNext()) {
+
+                    if (projectIterator.next().getCustomer().equals(customer)) {
+                        Temp.add(employeeTemp);
+                    }
+                }
+            }
+            return Temp;
+        }
+
+
     }
-
-
-}
 
