@@ -7,18 +7,16 @@ public class Controller {
 
 
     public static TreeSet<Employee> employeesByProject(String projectName) {
-        System.out.println( EmployeeDAO.getAll());
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Employee> Temp = new TreeSet<>();
 
         while (employeeIterator.hasNext()) {
-            System.out.println(employeeIterator.next().getFirstName());
-            System.out.println("dane");
-            Iterator<Project> projectIterator = employeeIterator.next().getProjectSet().iterator();
+            Employee employeeTemp = employeeIterator.next();
+            Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
             while (projectIterator.hasNext()) {
-
-                if (projectIterator.next().getName()==(projectName)) {
-                    Temp.add(employeeIterator.next());
+                Project projectTemp = projectIterator.next();
+                if (projectTemp.getName() == (projectName)) {
+                    Temp.add(employeeTemp);
                 }
             }
         }
@@ -30,11 +28,9 @@ public class Controller {
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Project> Temp = new TreeSet<>();
         while (employeeIterator.hasNext()) {
-
-            if (employeeIterator.next().equals(employee)) {
-                if(employeeIterator.next().getProjectSet().isEmpty())
-                {return null;}
-                Temp.addAll(employeeIterator.next().getProjectSet());
+            Employee employeeTemp = employeeIterator.next();
+            if (employeeTemp.equals(employee)) {
+                Temp.addAll(employeeTemp.getProjectSet());
             }
         }
         return Temp;
@@ -45,11 +41,11 @@ public class Controller {
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Employee> Temp = new TreeSet<>();
         while (employeeIterator.hasNext()) {
-           if (employeeIterator.next().getDepartment().getType().equals(departmentType) ){
-               System.out.println("dane");
-               if(employeeIterator.next().getProjectSet().isEmpty()){
-                   Temp.add(employeeIterator.next());
-               }
+            Employee employeeTemp = employeeIterator.next();
+            if (employeeTemp.getDepartment().getType().equals(departmentType)) {
+                if (employeeTemp.getProjectSet().isEmpty()) {
+                    Temp.add(employeeTemp);
+                }
             }
         }
         return Temp;
@@ -59,11 +55,13 @@ public class Controller {
     public static TreeSet<Employee> employeesWithoutProject() {
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Employee> Temp = new TreeSet<>();
+
         while (employeeIterator.hasNext()) {
-                if ( employeeIterator.next().getProjectSet().isEmpty()) {
-                    Temp.add(employeeIterator.next());
-                }
+            Employee employeeTemp = employeeIterator.next();
+            if (employeeTemp.getProjectSet().isEmpty()) {
+                Temp.add(employeeTemp);
             }
+        }
         return Temp;
     }
 
@@ -90,12 +88,12 @@ public class Controller {
         while (projectIterator.hasNext()) {
 
             while (employeeIterator.hasNext()) {
-                if (employeeIterator.next().getPosition() == Position.TEAM_LEAD) {
+                Employee employeeTemp = employeeIterator.next();
+                if (employeeTemp.getPosition() == Position.TEAM_LEAD) {
                     Iterator<Project> projectIterator1 = employee.getProjectSet().iterator();
                     while (projectIterator1.hasNext()) {
-                        if(projectIterator1.next()==projectIterator.next()){
-                            Temp.add(employeeIterator.next());
-                            System.out.println("выбор");
+                        if (projectIterator1.next() == projectIterator.next()) {
+                            Temp.add(employeeTemp);
                         }
                     }
                 }
@@ -111,14 +109,14 @@ public class Controller {
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Employee> Temp = new TreeSet<>();
         while (employeeIterator.hasNext()) {
-            Iterator<Project> projectIterator = employeeIterator.next().getProjectSet().iterator();
+            Employee employeeTemp = employeeIterator.next();
+            Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
             Iterator<Project> projectIterator1 = employee.getProjectSet().iterator();
             while (projectIterator.hasNext()) {
                 System.out.println("итератор");
                 while (projectIterator1.hasNext()) {
                     if (projectIterator.next().getName().equals(projectIterator1.next().getName())) {
-                        Temp.add(employeeIterator.next());
-                        System.out.println("выбор");
+                        Temp.add(employeeTemp);
                     }
                 }
             }
@@ -131,16 +129,15 @@ public class Controller {
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Project> Temp = new TreeSet<>();
         while (employeeIterator.hasNext()) {
-            Iterator<Project> projectIterator = employeeIterator.next().getProjectSet().iterator();
+            Employee employeeTemp = employeeIterator.next();
+            Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
 
-            while (projectIterator.hasNext()) {
-                System.out.println("итератор");
-                if (projectIterator.next().getCustomer().equals(customer)) {
-                    Temp.add(projectIterator.next());
-                    System.out.println("выбор");
+            while (projectIterator.hasNext()) ;
+            Project projectTemp=projectIterator.next();
+                if (projectTemp.getCustomer().equals(customer)) {
+                    Temp.add(projectTemp);
                 }
             }
-        }
         return Temp;
     }
 
@@ -148,13 +145,13 @@ public class Controller {
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Employee> Temp = new TreeSet<>();
         while (employeeIterator.hasNext()) {
-            Iterator<Project> projectIterator = employeeIterator.next().getProjectSet().iterator();
+            Employee employeeTemp = employeeIterator.next();
+            Iterator<Project> projectIterator = employeeTemp.getProjectSet().iterator();
 
             while (projectIterator.hasNext()) {
-                System.out.println("итератор");
+
                 if (projectIterator.next().getCustomer().equals(customer)) {
-                    Temp.add(employeeIterator.next());
-                    System.out.println("выбор");
+                    Temp.add(employeeTemp);
                 }
             }
         }

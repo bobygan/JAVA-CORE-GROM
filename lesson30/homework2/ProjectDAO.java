@@ -9,19 +9,19 @@ import java.util.TreeSet;
 public class ProjectDAO {
 
 
-    private static TreeSet<Project> projectSet = new TreeSet<>();
+    private  TreeSet<Project> projectSet = new TreeSet<>();
 
 
-    public static Project add(Project p) {
+    public  Project add(Project p) {
         projectSet.add(p);
         return p;
     }
 
-    public static TreeSet<Project> getAll() {
+    public  TreeSet<Project> getAll() {
         return projectSet;
     }
 
-    public static void print() {
+    public  void print() {
         Iterator<Project> iterator = projectSet.iterator();
         while (iterator.hasNext()) {
             System.out.println(iterator.next());

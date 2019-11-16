@@ -44,7 +44,7 @@ public class Employee implements Comparable<Employee> {
         return department;
     }
 
-    public Set<Project> getProjectSet() { return projectSet; }
+    public TreeSet<Project> getProjectSet() { return projectSet; }
 
     @Override
     public boolean equals(Object o) {
