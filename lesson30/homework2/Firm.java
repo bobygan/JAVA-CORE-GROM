@@ -1,6 +1,6 @@
 package lesson30.homework2;
 
-import lesson30.homework1.Transaction;
+
 
 import java.util.Date;
 import java.util.Set;
