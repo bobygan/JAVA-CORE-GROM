@@ -1,47 +1,42 @@
-/*
-Напишите метод copyFileContent, который будет копиторать все содержимое файла fileFrom.txt
-и записывать это в новый файл fileTo.txt.
-Используйте стандартные методы с JDK класса File.
-Во втором методе используйте стандартные методы библиотеки Apache IO
+/*Напишите метод transferFileContent, который будет переносить все содержимое файла
+fileFrom.txt в новый файл fileTo.txt.
+Контент в начальном файле при этом должен быть удален,
+но файл остается. В файле назначения, текст должен добавляться к уже существующему
+с новой строки, если он есть. Если какого-то из файлов не существует или возникла
+ошибка работы по стримами, выбрасывайте соответствующую ошибку, описание которой
+должно содержать имя (путь) проблемного файла. Решение должно содержаться в классе Solution.
+Тестирование - в классе Demo
 
-Решение должно содержаться в классе Solution. Тестирование - в классе Demo
+        Сигнатура метода:
+        transferFileContent(String fileFromPath, String fileToPath)
 
-Сигнатура методов:
-copyFileContent(String fileFromPath, String fileToPath)
-copyFileContentApacheIO(String fileFromPath, String fileToPath)
 
- */
+*/
+package lesson34.homework2;
 
-package lesson34.homework4;
-import org.apache.commons.io.FileUtils;
+
 import java.io.*;
-import java.nio.charset.StandardCharsets;
 
 public class Solution {
 
-
-    public static void copyFileContent(String fileFromPath, String fileToPath) {
+    public static void transferFileContent(String fileFromPath, String fileToPath) {
         try {
             validate(fileFromPath, fileToPath);
             writeToFile(fileToPath, readFromFile(fileFromPath));
-
+            eriseFile(fileFromPath);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
 
     }
 
-    public static void copyFileContentApacheIO(String fileFromPath, String fileToPath) {
-        try {
-            validate(fileFromPath, fileToPath);
-            writeToFileApacheIO(fileToPath, readFromFileApacheIO(fileFromPath));
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+    private static void eriseFile(String path) {
+        try (BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path, false))) {
+            bufferedWriter.append("");
+        } catch (IOException e) {
+            System.err.println("Erasing is not posible");
         }
-
     }
-
 
 
     private static StringBuffer readFromFile(String path) {
@@ -52,7 +47,7 @@ public class Solution {
                 res.append(line);
                 res.append("\n");
             }
-            res.replace(res.length()-1,res.length(),"");
+            res.replace(res.length() - 1, res.length(), "");
         } catch (FileNotFoundException e) {
             System.err.printf("File does not exist");
         } catch (IOException e) {
@@ -87,22 +82,5 @@ public class Solution {
             throw new Exception("File " + fileTo + " does not have permission to be written");
         }
     }
-    private static String readFromFileApacheIO(String path) {
-        String res=null;
-        try {
-            res = FileUtils.readFileToString(new File(path), StandardCharsets.UTF_8);
-        }
-          catch (IOException e){
-                 e.printStackTrace();
-          }
-        return res;
-    }
-
-    private static void writeToFileApacheIO(String path, String contentToWrite) {
-        try {
-        FileUtils.write(new File(path),contentToWrite, StandardCharsets.UTF_8, true);
-        } catch (IOException e) {
-            System.err.println();
-        }
-    }
 }
+

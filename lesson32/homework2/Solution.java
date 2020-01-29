@@ -17,6 +17,7 @@ package lesson32.homework2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import org.apache.commons.io.IOUtils;
 
 public class Solution {
     public static void readNumbers() throws IOException {
@@ -31,8 +32,11 @@ public class Solution {
             sum = 0;
             System.out.println("!!!!!!!!!!!!!!!!отладка!!!!!!!!!!!!!!!");
             for (String temp : stringsTemp) {
-                sum += Integer.parseInt(temp);
-                if (Integer.parseInt(temp) > 100) {
+
+                if (isNumeric(temp) && Integer.parseInt(temp) <= 100) {
+                    sum += Integer.parseInt(temp);
+                }
+                else {
                     p -= 1;
                     System.out.println("Your numbers are wrong. You have  " + p + "  attempts to try again");
                     sum = 0;
@@ -49,5 +53,14 @@ public class Solution {
             }
 
         }
+
+    }
+    private static boolean isNumeric(String strNum) {
+        try {
+            Integer i = Integer.parseInt (strNum);
+        } catch (NumberFormatException | NullPointerException nfe) {
+            return false;
+        }
+        return true;
     }
 }

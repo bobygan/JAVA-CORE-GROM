@@ -69,7 +69,7 @@ public class Solution {
         if (input == null) {
             return null;
         }
-        String[] words = input.split(" ");
+        String[] words = input.split("");
 
         int[] res = new int[words.length];
 
