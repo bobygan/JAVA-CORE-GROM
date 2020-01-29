@@ -1,15 +1,12 @@
 package lesson30.homework3;
 
 
-import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Controller {
 
 
-
-
-    public  static TreeSet<Employee> employeesByProject(String projectName) {
+    public static TreeSet<Employee> employeesByProject(String projectName) {
         return EmployeeDAO.employeesByProject(projectName);
     }
 
@@ -27,7 +24,9 @@ public class Controller {
         return EmployeeDAO.employeesWithoutProject();
     }
 
+
     public static TreeSet<Employee> employeesByTeamLead(Employee lead) {
+
         return EmployeeDAO.employeesByTeamLead(lead);
     }
 
@@ -38,19 +37,19 @@ public class Controller {
 
 
     public static TreeSet<Employee> employeesByProjectEmployee(Employee employe) {
-            return EmployeeDAO.employeesByProjectEmployee(employe);
-        }
+        return EmployeeDAO.employeesByProjectEmployee(employe);
+    }
 
 
-        public static TreeSet<Project> projectsByCustomer (Customer customer){
-            return EmployeeDAO.projectsByCustomer(customer);
-        }
+    public static TreeSet<Project> projectsByCustomer(Customer customer) {
+        return EmployeeDAO.projectsByCustomer(customer);
+    }
 
-        public static TreeSet<Employee> employeesByCustomerProjects (Customer customer){
-            return EmployeeDAO.employeesByCustomerProjects(customer);
-
-        }
-
+    public static TreeSet<Employee> employeesByCustomerProjects(Customer customer) {
+        return EmployeeDAO.employeesByCustomerProjects(customer);
 
     }
+
+
+}
 

@@ -21,6 +21,7 @@ public class EmployeeDAO {
     public static TreeSet<Employee> getAll() {
         return employeeTreeSet;
     }
+
     public static TreeSet<Employee> employeesByProject(String projectName) {
         Iterator<Employee> employeeIterator = EmployeeDAO.getAll().iterator();
         TreeSet<Employee> Temp = new TreeSet<>();

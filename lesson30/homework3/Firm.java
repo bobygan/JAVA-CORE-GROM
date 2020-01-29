@@ -8,6 +8,6 @@ import java.util.TreeSet;
 
 public class Firm {
     private Date dateFounded;
-    private Set<Department> departments = new TreeSet<>();
-    private Set<Customer> customers = new TreeSet<>();
+    private TreeSet<Department> departments = new TreeSet<>();
+    private TreeSet<Customer> customers = new TreeSet<>();
 }
