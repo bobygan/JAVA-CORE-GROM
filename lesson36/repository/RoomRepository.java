@@ -1,6 +1,6 @@
 package lesson36.repository;
 
-import lesson30.homework2.Employee;
+
 import lesson36.controller.Filter;
 import lesson36.model.Hotel;
 import lesson36.model.Room;

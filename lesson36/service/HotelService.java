@@ -12,6 +12,8 @@ public class HotelService {
         //если все ок
         try {
             validate(hotel);
+
+
             return hotelRepository.addHotel(hotel);
         }
         catch (Exception e){

@@ -14,7 +14,7 @@ public class DemoHotel {
         Hotel hotel2 = new Hotel("I", "hj", "AN", "UA");
         Hotel hotel3 = new Hotel("S", "hj", "AN", "UA");
         HotelController hotelController = new HotelController();
-//        hotelController.addHotel(hotel);
+        hotelController.addHotel(hotel);
         //hotelController.addHotel(hotel2);
       //  hotelController.addHotel(hotel3);
        // hotelController.deleteHotel(73);
