@@ -47,6 +47,8 @@ public class Room {
         catch (Exception e){}
         this.dateAvailableFrom =docDate;
         this.hotel = hotel;
+
+
     }
 
     public int getNumberOfGuests() {
@@ -75,14 +77,12 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "id=" + id +
-                ", numberOfGuests=" + numberOfGuests +
-                ", price=" + price +
-                ", breakfastIncluded=" + breakfastIncluded +
-                ", petsAllowed=" + petsAllowed +
-                ", dateAvailableFrom=" + dateAvailableFrom +
-                ", hotel=" + hotel +
-                '}';
+        return id +
+                "," + numberOfGuests +
+                "," + price +
+                "," + breakfastIncluded +
+                "," + petsAllowed +
+                "," + dateAvailableFrom +
+                "," + hotel;
     }
 }

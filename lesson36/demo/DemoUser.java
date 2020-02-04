@@ -8,9 +8,13 @@ public class DemoUser {
     public static void main(String[] args) {
 
         User user=new User("ANDRII","hj","AN",UserType.USER);
-        User[] user1=new User[2];
+        User user1=new User("AND","h","US",UserType.ADMIN);
         UserController userController=new UserController();
-        userController.registerUser(user);
+        try {
+            userController.registerUser(user1);
+        }
+        catch (Exception e){}
+
 
     }
 }

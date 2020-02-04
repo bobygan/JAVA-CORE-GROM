@@ -1,23 +1,20 @@
 package lesson36.service;
 
 import lesson36.controller.Filter;
-import lesson36.model.Hotel;
 import lesson36.model.Room;
-import lesson36.repository.HotelRepository;
-import lesson36.repository.RoomRepository;
-
+import lesson36.repository.Repository;
 import java.util.HashSet;
 
 public class RoomService {
 
-    private RoomRepository roomRepository = new RoomRepository();
+    private Repository repository = new Repository();
 
     public Room addRoom(Room room) {
         //проверяем бизнес логику
         //если все ок
         try {
             validate(room);
-            return roomRepository.addRoom(room);
+            return repository.addRoom(room);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -27,9 +24,9 @@ public class RoomService {
 
 
     public boolean deleteRoom (long RoomId) {
-        return roomRepository.deleteRoom(RoomId);
+        return repository.deleteRoom(RoomId);
     }
-    public HashSet<Room> findRooms(Filter filter) throws Exception {return roomRepository.findRooms(filter);}
+    public HashSet<Room> findRooms(Filter filter) throws Exception {return repository.findRooms(filter);}
 
     private void validate(Room room) throws Exception {
         if (room == null) {

@@ -15,9 +15,9 @@ public class DemoHotel {
         Hotel hotel3 = new Hotel("S", "hj", "AN", "UA");
         HotelController hotelController = new HotelController();
         hotelController.addHotel(hotel);
-        //hotelController.addHotel(hotel2);
-      //  hotelController.addHotel(hotel3);
-       // hotelController.deleteHotel(73);
+        hotelController.addHotel(hotel2);
+        hotelController.addHotel(hotel3);
+       //hotelController.deleteHotel(73);
         System.out.println( hotelController.findHotelByName("S"));
         System.out.println( hotelController.findHotelByCity("Igor"));
     }

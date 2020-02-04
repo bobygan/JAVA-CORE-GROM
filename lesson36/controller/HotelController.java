@@ -7,11 +7,6 @@ import lesson36.service.UserService;
 
 public class HotelController {
 
-    // findHoteByName(String name)
-    // findHotelByCity(String city)
-    // Collection findRooms(Filter filter)
-    // void bookRoom(long roomId, long userId, long hotelId)
-    //  void cancelReservation(long roomId, long userId)
     private HotelService hotelService = new HotelService();
 
     public Hotel addHotel (Hotel hotel) {

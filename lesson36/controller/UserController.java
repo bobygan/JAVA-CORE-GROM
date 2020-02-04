@@ -11,8 +11,8 @@ public class UserController {
     //  void cancelReservation(long roomId, long userId)
     private UserService userService = new UserService();
 
-    public User registerUser(User user) {
-        return userService.registerUser(user);
+    public User registerUser(User user) throws Exception {
+        return userService.registerUser(user) ;
     }
 
   //  public

@@ -43,7 +43,6 @@ public class RoomRepository {
         return true;
     }
 
-
     public HashSet<Room> findRooms(Filter filter) throws Exception {
 
         HashSet<Room> tempfilter = new HashSet<>();
@@ -66,7 +65,6 @@ public class RoomRepository {
         return temp;
 
     }
-
 
     private static void validate(String fileToPath) throws Exception {
 
@@ -187,12 +185,11 @@ public class RoomRepository {
         return bufferTemp;
     }
 
-
     private static HashSet<Room> map(StringBuffer content) throws Exception {
 
         StringBuffer bufferTemp = new StringBuffer();
         String[] temp2 = content.toString().split("[/\\r\\n|\\r|\\n/]\\s*"); //разбиваем на строки
-        //  String[] temp = temp2[0].split("[,]\\s*");//split("[,]\\s*"); //разбиваем на строки
+
 
         HashSet<Room> TempSet = new HashSet<>();
         HotelRepository hotelRepository = new HotelRepository();

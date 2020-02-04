@@ -10,12 +10,12 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class HotelRepository {
-
+    String path = "d:/hotel.txt";
     //считывание данных
     //ороботка данных - маппинг данных
     public Hotel addHotel(Hotel hotel) {
 
-        String path = "d:/hotel.txt";
+
         try {
             validate(path);
             System.out.println("hotel dan");
@@ -48,10 +48,8 @@ public class HotelRepository {
 
     public Hotel findHotelByName(String name) {
 
-        String path = "d:/hotel.txt";
         try {
             validate(path);
-
             return ((map(findByName(readFromFile(path), name))));
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -62,7 +60,6 @@ public class HotelRepository {
 
     public Hotel findHotel(long id) {
 
-        String path = "d:/hotel.txt";
         try {
             validate(path);
 
@@ -75,8 +72,6 @@ public class HotelRepository {
     }
 
     public Hotel findHotelByCity(String city) {
-
-        String path = "d:/hotel.txt";
         try {
             validate(path);
 
@@ -135,11 +130,8 @@ public class HotelRepository {
             while ((line = br.readLine()) != null) {
                 res.append(line);
                 res.append("\n");
-                // System.out.println("1");
-                // System.out.println(line);
             }
-            // System.out.println(res);
-            // res.replace(res.length() - 1, res.length(), "");
+
         } catch (FileNotFoundException e) {
             System.err.printf("File does not exist");
         } catch (IOException e) {
@@ -227,25 +219,12 @@ public class HotelRepository {
 
     private static Hotel map(StringBuffer content) {
 
-        StringBuffer bufferTemp = new StringBuffer();
+      //  StringBuffer bufferTemp = new StringBuffer();
         String[] temp2 = content.toString().split("[/\\r\\n|\\r|\\n/]\\s*"); //разбиваем на строки
-        String[] temp = temp2[0].split("[,]\\s*");//split("[,]\\s*"); //разбиваем на строки
+        String[] temp = temp2[0].split("[,]\\s*");//split("[,]\\s*"); //разбиваем на элементы
 
         Hotel Temp = new Hotel(Long.parseLong(temp[0]), temp[1], temp[2], temp[3], temp[4]);
 
-      /*
-        for (int i = 0; i < temp.length; i++) {
-            // System.out.println(temp[i]+"---"+i);
-            // temp[i] = temp[i] + "." + " ";
-            String[] temp2 = temp[i].split("[,]\\s*");
-            //  System.out.println(temp2[0]);
-            if (!(temp2[1]).equals(name)) {
-                //     System.out.println(temp2[0]);
-                bufferTemp.append(temp[i]);
-                bufferTemp.append(System.lineSeparator());
-
-            }
-            */
         return Temp;
 
     }

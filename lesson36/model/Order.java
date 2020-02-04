@@ -45,5 +45,15 @@ public class Order {
     public double getMoneyPaid() {
         return moneyPaid;
     }
+
+    @Override
+    public String toString() {
+        return  id +
+                "," + user +
+                "," + room +
+                "," + dateFrom +
+                "," + dateTo +
+                "," + moneyPaid;
+    }
 }
 
