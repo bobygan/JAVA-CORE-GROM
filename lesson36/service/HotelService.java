@@ -1,5 +1,6 @@
 package lesson36.service;
 
+import lesson36.exeption.BadRequestException;
 import lesson36.model.Hotel;
 import lesson36.repository.Repository;
 
@@ -37,16 +38,8 @@ public class HotelService {
         }
 
         if(hotel.getName().equals("")||hotel.getName().equals(null)){
-            throw new NullPointerException ("User data is wrong");
-
+            throw new BadRequestException("User data is wrong");
 
         }
-
-
-
-
-
     }
-
-
 }
